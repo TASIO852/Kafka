@@ -1,6 +1,4 @@
-<img  width=800 height=150 src="../../Images/Kafka/Kafka.png" ></img>
-
-# **O que é ?**
+# **O que é Apache Kafka?**
 
 O Apache Kafka é uma plataforma distribuída de transmissão de dados que é capaz de publicar, subscrever, armazenar e processar fluxos de registro em tempo real.
 
@@ -26,29 +24,11 @@ O Kafka foi escrito nas linguagens de programação Java e Scala. Ele realiza as
 
 Em sua estrutura, o Kafka possui consumers e producers. Para definir esses termos, basta traduzir: os producers são os produtores das mensagens (quem envia e distribui os dados); já os consumers são os consumidores das mensagens (eles se inscrevem em um tópico e ficam ouvindo as mensagem que chegarão).
 
-![funcionalidades](../../Images/Kafka/Funcionamento.png)
-
 # **Qual é a Arquitetura ?**
 
-![Arquitetura](../../Images/Kafka/Arquitetura.png)
+![Arquitetura](Images/Arquitetura.png)
 
 A arquitetura do Apache Kafka é organizada em torno de alguns termos chaves, são eles: messages, topics, producers, consumers groups e os brokers. O Apache Kafka é uma plataforma de stream (fluxo de dados) de alto throughput que desacopla os produtores de dados dos consumidores de dados
-
-# **Como instalar ?**
-
-- Você pode fazer download dos binários (ou até mesmo compilar o código) a partir do site oficial da ferramenta. Neste mesmo site, você consegue encontrar um quickstart para rodar o Kafka a partir da linha de comando manualmente.
-
-- Pode estar fazendo a montagem de um docker-compose.
-
-- O Apache Kafka precisa do java para rodar ele ja vem dentro do container docker então nao precisa se preocupar
-
-# **Como funciona dentro do container ?**
-
-- E uma ferramenta multi-server e plataforma streaming que quer dizer os dados coletados em tempo real
-
-[Video explicativo](https://www.youtube.com/watch?v=qOqXz5Qv_-8)
-
-[Detalhes](https://medium.com/azure-na-pratica/apache-kafka-kafdrop-docker-compose-montando-rapidamente-um-ambiente-para-testes-606cc76aa66)
 
 # **Quais sao suas dependências ?**
 
@@ -64,13 +44,9 @@ Zookeeper e Kafka trabalha de forma separada se comunicando entre si.
 
 O **_Kafka Connect_** pode criar um cluster de trabalhadores para tornar o processo de cópia de dados escalável e tolerante à falhas. Os trabalhadores precisam armazenar algumas informações sobre seu status, seu progresso na leitura de dados do armazenamento externo e assim por diante. Para armazenar esses dados, eles usam o Kafka como armazenamento.
 
-![Connections](../../Images/Kafka/Kafka%20conect.jpg)
+![Connections](Images/Kafka%20conect.jpg)
 
 [Video Auxiliar](https://www.youtube.com/watch?v=h44GZk2gkCI)
-
-## **Java**
-
-O Kafka precisa do java para poder ser usado, então é obrigatório possuir a versão atual do JDK na máquina.
 
 ## **Processamento em Kafka Python**
 
@@ -108,7 +84,7 @@ O Apache Kafka é incorporado a pipelines de transmissão que compartilham dados
 
 Um tópico é como categorizamos grupos de mensagens dentro do Kafka. Todas as mensagens enviadas para o Kafka permanecem em um tópico. Como comentado sobre Event Sourcing, mensagens são imutáveis e ordenadas. Para manter a ordenação em um ecossistema de Kafka, os tópicos possuem partições e fatores de replicação.
 
-![Topics](../../Images/Kafka/topico.png)
+![Topics](Images/topico.png)
 
 - [Explicação detalhada](https://vepo.github.io/posts/anatomia-de-um-topico)
 
@@ -158,15 +134,13 @@ Um cluster Kafka é um sistema que consiste em vários Brokers, Topics e Partiti
 
 Replicação significa simplesmente manter cópias dos dados no cluster para promover o recurso de disponibilidade em qualquer aplicativo. A replicação no Kafka está no nível da partição. Cada partição tem 0 ou mais replicações no cluster.
 
-![replica](../../Images/Kafka/replica.webp)
-
 - [Organização dos dados](https://hevodata.com/learn/kafka-replication/)
 
 ## **Segmentos**
 
 Os segmentos ficam dentro das partições e segmentam as informações contidas nos logs files daquela partição, todo tópico possui sua partição e sua segmentação, a segmentação serve para gerenciar a ordenação da informação do log file bem como o tempo que ela ira ficar persistida.
 
-![Segmento](../../Images/Kafka/segmento.png)
+![Segmento](Images/segmento.png)
 
 # **Como usar ?**
 
@@ -176,26 +150,8 @@ Os segmentos ficam dentro das partições e segmentam as informações contidas 
 
 - Você pode usar o nó KafkaProducer para publicar mensagens que são geradas de dentro do seu fluxo de mensagens para um tópico hospedado em um servidor Kafka . As mensagens publicadas ficam, então, disponíveis para serem recebidas pelos consumidores (assinantes) por meio da leitura do tópico. Você pode usar um nó KafkaConsumer em um fluxo de mensagens para se inscrever em um tópico especificado em um servidor Kafka . Para obter mais informações sobre o uso do nó KafkaConsumer , consulte Consumindo mensagens de Kafka tópicos.
 
-# **Uso do Python ?**
-
-Kafka usa um protocolo binário sobre TCP. O protocolo define todas as APIs como pares de mensagens de resposta de solicitação que sao construídas em python.
-
 - [Integração](https://cicerojmm.medium.com/processamento-e-an%C3%A1lise-de-dados-em-tempo-real-com-kafka-e-python-952be439b0fb)
 - [kafka python exemplo](https://selectfrom.dev/apache-spark-structured-streaming-via-docker-compose-3e1f146384b9)
-
-# **Como se encaixa em todo o processo ?**
-
-O Kafka é o processo inicial de todo o fluxo de dados fazendo a extração das fontes de dados.
-
-> **Onde vai para cada fluxo de dados da ferramenta ?**
-
-O Fluxo de dados nessa ferramenta é de acordo com o projeto ou dimensão que vai ser criada para os projetos de cada setor.
-
-> **De qual processo ela faz parte ?**
-
-Da parte inicial do processo fazendo a extração dos dados.
-
-> **Como dar deploy da aplicação ?**
 
 - [confluent Aprendizado kafka](https://www.confluent.io/online-talks/online-training-fundamentals-for-apache-kafka-v1/?utm_medium=display&utm_source=google&utm_campaign=ch.display_tp.rmkt_tgt.key-page-visit-no-hva_rgn.latam_lng.eng_dv.all_con.kafka-fundamentals-3-part-webinar&utm_term=&creative=akfunseries3part-180Days&device=c&placement=www.youtube.com&gclid=Cj0KCQjwpeaYBhDXARIsAEzItbGuI_i-SiX0OJCM5tYeQ9Lal4EntiKFDBNu4He_7cFnYAohTJ2RfmoaApF5EALw_wcB)
 
