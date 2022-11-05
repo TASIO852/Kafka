@@ -58,8 +58,6 @@ Para a utilização dos recursos do Kafka, será necessário a utilização do P
 
 Kafka tem uns componentes arquiteturais que detalharei a seguir e vai ficar fácil de entender: mensagem, offset, tópico, partition, broker.
 
-**_💥ASSISTA OS VIDEOS ANTES DE COMEÇAR A LER ESSA PARTE💥_**
-
 - [Componentes](https://atitudereflexiva.wordpress.com/2020/03/05/apache-kafka-introducao/)
 
 - [Conceito de cada componente](https://imasters.com.br/software/apache-kafka-entenda-conceitos-arquiteturas-e-componentes)
